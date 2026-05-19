@@ -36,24 +36,25 @@ export default function KontakPage() {
   const [message, setMessage] = useState("");
   const [userTestimonials, setUserTestimonials] = useState([]);
   const [statusMessage, setStatusMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const stored = window.localStorage.getItem("semeruTourTestimonials");
-    if (stored) {
+    const fetchTestimoni = async () => {
       try {
-        const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed)) {
-          setUserTestimonials(parsed);
+        const response = await fetch("/api/testimoni");
+        if (response.ok) {
+          const result = await response.json();
+          setUserTestimonials(result.data || []);
         }
       } catch (error) {
-        console.warn("Gagal memuat testimoni dari storage", error);
+        console.warn("Gagal memuat testimoni dari server", error);
+      } finally {
+        setIsLoading(false);
       }
-    }
-  }, []);
+    };
 
-  useEffect(() => {
-    window.localStorage.setItem("semeruTourTestimonials", JSON.stringify(userTestimonials));
-  }, [userTestimonials]);
+    fetchTestimoni();
+  }, []);
 
   const testimonials = useMemo(
     () => [...initialTestimonials, ...userTestimonials].slice().reverse(),
@@ -66,26 +67,43 @@ export default function KontakPage() {
     return allRatings.reduce((sum, value) => sum + value, 0) / allRatings.length;
   }, [userTestimonials]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (!name.trim() || !message.trim()) {
       setStatusMessage("Mohon isi nama dan testimoni Anda terlebih dahulu.");
       return;
     }
 
-    const nextTestimonial = {
-      id: Date.now(),
-      name: name.trim(),
-      rating: Number(rating),
-      message: message.trim(),
-      date: new Date().toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" }),
-    };
+    try {
+      const response = await fetch("/api/testimoni", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name.trim(),
+          rating: Number(rating),
+          message: message.trim(),
+        }),
+      });
 
-    setUserTestimonials((current) => [...current, nextTestimonial]);
-    setName("");
-    setRating(5);
-    setMessage("");
-    setStatusMessage("Terima kasih! Testimoni Anda telah tersimpan.");
+      if (response.ok) {
+        const result = await response.json();
+        setUserTestimonials((current) => [...current, result.data]);
+        setName("");
+        setRating(5);
+        setMessage("");
+        setStatusMessage("Terima kasih! Testimoni Anda telah tersimpan.");
+        
+        // Clear status message after 3 seconds
+        setTimeout(() => setStatusMessage(""), 3000);
+      } else {
+        setStatusMessage("Gagal menyimpan testimoni. Silakan coba lagi.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatusMessage("Terjadi kesalahan. Silakan coba lagi.");
+    }
   };
 
   return (
