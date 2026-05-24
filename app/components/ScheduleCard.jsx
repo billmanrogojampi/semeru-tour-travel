@@ -90,6 +90,8 @@ export default function ScheduleCard() {
 
     try {
       const newStatus = item.status === 'Terbooking' ? 'Belum ada order' : 'Terbooking';
+      console.log(`[Admin] Mengubah jadwal ${activeData.month} ${activeData.year} tanggal ${item.tanggal}: ${item.status} -> ${newStatus}`);
+      
       const response = await fetch('/api/jadwal', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -111,20 +113,23 @@ export default function ScheduleCard() {
         // not JSON — keep raw text
       }
 
-      if (response.ok) {
-        setUpdateMessage(result?.message || `Tanggal ${item.tanggal} berhasil diubah menjadi ${newStatus}.`);
+      if (response.ok && result?.success) {
+        const successMsg = result?.message || `Tanggal ${item.tanggal} berhasil diubah menjadi ${newStatus}`;
+        console.log(`[Admin] ✓ ${successMsg}`);
+        setUpdateMessage(successMsg);
         await fetchJadwal();
       } else {
         const serverMsg = result?.error || text || 'Gagal mengubah status jadwal.';
-        console.error('PUT /api/jadwal failed', response.status, serverMsg);
-        setUpdateMessage(serverMsg);
+        const errorCode = result?.code || 'UNKNOWN_ERROR';
+        console.error(`[Admin] ✗ Error (${errorCode}):`, serverMsg);
+        setUpdateMessage(`❌ ${serverMsg}`);
       }
     } catch (error) {
-      console.error('Error update jadwal:', error);
-      setUpdateMessage('Terjadi kesalahan saat mengubah status jadwal.');
+      console.error('[Admin] Network error:', error);
+      setUpdateMessage(`❌ Terjadi kesalahan: ${error.message || 'Network error'}`);
     } finally {
       setIsSaving(false);
-      setTimeout(() => setUpdateMessage(''), 3000);
+      setTimeout(() => setUpdateMessage(''), 4000);
     }
   };
 

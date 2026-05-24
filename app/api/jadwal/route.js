@@ -45,8 +45,20 @@ export async function PUT(request) {
     const status = normalizeStatus(body.status);
     const keterangan = normalizeKeterangan(body.keterangan, status);
 
-    if (!month || !year || !tanggal) {
-      return Response.json({ error: 'Month, year, dan tanggal diperlukan' }, { status: 400 });
+    console.log(`[PUT /api/jadwal] Attempting update: ${month} ${year} tanggal ${tanggal} -> ${status}`);
+
+    if (!month || !year || !tanggal || isNaN(tanggal)) {
+      return Response.json({ 
+        error: 'Month, year, dan tanggal (angka) diperlukan',
+        code: 'INVALID_INPUT'
+      }, { status: 400 });
+    }
+
+    if (tanggal < 1 || tanggal > 31) {
+      return Response.json({ 
+        error: 'Tanggal harus antara 1-31',
+        code: 'INVALID_DATE'
+      }, { status: 400 });
     }
 
     const existing = db
@@ -54,16 +66,32 @@ export async function PUT(request) {
       .get(month, year, tanggal);
 
     if (!existing) {
-      return Response.json({ error: 'Jadwal tidak ditemukan' }, { status: 404 });
+      console.log(`[PUT /api/jadwal] Jadwal tidak ditemukan untuk ${month} ${year} ${tanggal}`);
+      return Response.json({ 
+        error: `Jadwal tidak ditemukan untuk ${month} ${year} tanggal ${tanggal}`,
+        code: 'NOT_FOUND'
+      }, { status: 404 });
     }
 
+    console.log(`[PUT /api/jadwal] Found existing: id=${existing.id}, current_status=${existing.status}`);
+
+    // Update jadwal tanpa restriction apapun
     db.prepare('UPDATE jadwal SET status = ?, keterangan = ? WHERE id = ?')
       .run(status, keterangan, existing.id);
 
     const updated = db.prepare('SELECT * FROM jadwal WHERE id = ?').get(existing.id);
-    return Response.json({ success: true, data: updated });
+    console.log(`[PUT /api/jadwal] Successfully updated to: status=${updated.status}, keterangan=${updated.keterangan}`);
+    
+    return Response.json({ 
+      success: true, 
+      data: updated,
+      message: `Tanggal ${tanggal} berhasil diubah menjadi ${status}`
+    });
   } catch (error) {
     console.error('Error PUT jadwal:', error);
-    return Response.json({ error: error.message }, { status: 500 });
+    return Response.json({ 
+      error: `Terjadi kesalahan: ${error.message}`,
+      code: 'SERVER_ERROR'
+    }, { status: 500 });
   }
 }
