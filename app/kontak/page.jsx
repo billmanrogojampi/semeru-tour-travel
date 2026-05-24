@@ -112,7 +112,7 @@ export default function KontakPage() {
         setName("");
         setRating(5);
         setMessage("");
-        setStatusMessage("Terima kasih! Testimoni Anda telah tersimpan.");
+        setStatusMessage(result.message || "Testimoni berhasil dikirim. Terima kasih!");
         
         // Clear status message after 3 seconds
         setTimeout(() => setStatusMessage(""), 3000);
