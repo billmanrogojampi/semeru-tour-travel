@@ -122,8 +122,8 @@ export default function ScheduleCard() {
       } else {
         const serverMsg = result?.error || text || 'Gagal mengubah status jadwal.';
         const errorCode = result?.code || 'UNKNOWN_ERROR';
-        console.error(`[Admin] ✗ Error (${errorCode}):`, serverMsg);
-        setUpdateMessage(`❌ ${serverMsg}`);
+        console.error(`[Admin] ✗ Error (${response.status} ${response.statusText}, ${errorCode}):`, serverMsg);
+        setUpdateMessage(`❌ [${response.status}] ${serverMsg}`);
       }
     } catch (error) {
       console.error('[Admin] Network error:', error);
