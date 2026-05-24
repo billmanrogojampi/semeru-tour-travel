@@ -96,6 +96,7 @@ export default function ScheduleCard() {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          id: item.id,
           month: activeData.month,
           year: activeData.year,
           tanggal: item.tanggal,
