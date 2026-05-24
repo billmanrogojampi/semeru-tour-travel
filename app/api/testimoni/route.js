@@ -95,7 +95,8 @@ export async function PUT(request) {
     }
 
     const testimonies = readTestimoni();
-    const index = testimonies.findIndex((item) => item.id === body.id);
+    const itemId = Number(body.id);
+    const index = testimonies.findIndex((item) => item.id === itemId);
     if (index === -1) {
       return Response.json({ error: 'Testimoni tidak ditemukan' }, { status: 404 });
     }
@@ -123,6 +124,36 @@ export async function PUT(request) {
     return Response.json({ error: 'Gagal memperbarui testimoni' }, { status: 500 });
   } catch (error) {
     console.error('Error PUT testimoni:', error);
+    return Response.json({ error: error.message }, { status: 500 });
+  }
+}
+
+export async function DELETE(request) {
+  try {
+    const body = await request.json();
+    if (!body.id || !body.ownerId) {
+      return Response.json({ error: 'ID dan ownerId diperlukan untuk menghapus testimoni' }, { status: 400 });
+    }
+
+    const testimonies = readTestimoni();
+    const itemId = Number(body.id);
+    const index = testimonies.findIndex((item) => item.id === itemId);
+    if (index === -1) {
+      return Response.json({ error: 'Testimoni tidak ditemukan' }, { status: 404 });
+    }
+
+    if (testimonies[index].ownerId !== body.ownerId) {
+      return Response.json({ error: 'Anda tidak diizinkan menghapus testimoni ini' }, { status: 403 });
+    }
+
+    testimonies.splice(index, 1);
+    if (writeTestimoni(testimonies)) {
+      return Response.json({ success: true, data: { id: body.id } });
+    }
+
+    return Response.json({ error: 'Gagal menghapus testimoni' }, { status: 500 });
+  } catch (error) {
+    console.error('Error DELETE testimoni:', error);
     return Response.json({ error: error.message }, { status: 500 });
   }
 }

@@ -141,6 +141,41 @@ export default function KontakPage() {
     setEditMessage("");
   };
 
+  const handleDelete = async (id) => {
+    if (!currentOwnerId) {
+      setStatusMessage("Menunggu inisialisasi pemilik testimoni. Silakan coba lagi sebentar.");
+      return;
+    }
+
+    const confirmDelete = window.confirm("Yakin ingin menghapus testimoni ini?");
+    if (!confirmDelete) return;
+
+    try {
+      const response = await fetch("/api/testimoni", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id,
+          ownerId: currentOwnerId,
+        }),
+      });
+
+      if (response.ok) {
+        setUserTestimonials((current) => current.filter((item) => item.id !== id));
+        setStatusMessage("Testimoni berhasil dihapus.");
+        setTimeout(() => setStatusMessage(""), 3000);
+      } else {
+        const errorResult = await response.json().catch(() => null);
+        setStatusMessage(errorResult?.error || "Gagal menghapus testimoni.");
+      }
+    } catch (error) {
+      console.error("Error delete:", error);
+      setStatusMessage("Terjadi kesalahan saat menghapus testimoni.");
+    }
+  };
+
   const handleUpdateSubmit = async (event) => {
     event.preventDefault();
     if (!editName.trim() || !editMessage.trim()) {
@@ -270,9 +305,14 @@ export default function KontakPage() {
                     <>
                       <p>{item.message}</p>
                       {canEdit && (
-                        <button type="button" className="testimonial-edit-button" onClick={() => handleStartEdit(item)}>
-                          Edit Testimoni
-                        </button>
+                        <div className="testimonial-card-actions">
+                          <button type="button" className="testimonial-edit-button" onClick={() => handleStartEdit(item)}>
+                            Edit Testimoni
+                          </button>
+                          <button type="button" className="testimonial-delete-button" onClick={() => handleDelete(item.id)}>
+                            Hapus Testimoni
+                          </button>
+                        </div>
                       )}
                     </>
                   )}

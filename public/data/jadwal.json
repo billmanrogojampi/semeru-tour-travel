@@ -1,6 +1,6 @@
 [
   {
-    "month": "Mei",
+    "month": "Januari",
     "year": "2026",
     "dates": [
       {
@@ -10,33 +10,33 @@
       },
       {
         "tanggal": 2,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 3,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 4,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 5,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 6,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 7,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 8,
@@ -45,43 +45,43 @@
       },
       {
         "tanggal": 9,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 10,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 11,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 12,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 13,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 14,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 15,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 16,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 17,
@@ -100,43 +100,43 @@
       },
       {
         "tanggal": 20,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 21,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 22,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 23,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 24,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 25,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 26,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 27,
-        "status": "Belum ada order",
-        "keterangan": ""
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 28,
@@ -157,6 +157,630 @@
         "tanggal": 31,
         "status": "Terbooking",
         "keterangan": "Terbooking"
+      }
+    ]
+  },
+  {
+    "month": "Februari",
+    "year": "2026",
+    "dates": [
+      {
+        "tanggal": 1,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 2,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 3,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 4,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 5,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 6,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 7,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 8,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 9,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 10,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 11,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 12,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 13,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 14,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 15,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 16,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 17,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 18,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 19,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 20,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 21,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 22,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 23,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 24,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 25,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 26,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 27,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 28,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      }
+    ]
+  },
+  {
+    "month": "Maret",
+    "year": "2026",
+    "dates": [
+      {
+        "tanggal": 1,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 2,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 3,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 4,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 5,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 6,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 7,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 8,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 9,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 10,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 11,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 12,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 13,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 14,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 15,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 16,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 17,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 18,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 19,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 20,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 21,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 22,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 23,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 24,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 25,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 26,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 27,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 28,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 29,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 30,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 31,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      }
+    ]
+  },
+  {
+    "month": "April",
+    "year": "2026",
+    "dates": [
+      {
+        "tanggal": 1,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 2,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 3,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 4,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 5,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 6,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 7,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 8,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 9,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 10,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 11,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 12,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 13,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 14,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 15,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 16,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 17,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 18,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 19,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 20,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 21,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 22,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 23,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 24,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 25,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 26,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 27,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 28,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 29,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      },
+      {
+        "tanggal": 30,
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
+      }
+    ]
+  },
+  {
+    "month": "Mei",
+    "year": "2026",
+    "dates": [
+      {
+        "tanggal": 1,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 2,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 3,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 4,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 5,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 6,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 7,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 8,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 9,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 10,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 11,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 12,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 13,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 14,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 15,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 16,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 17,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 18,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 19,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 20,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 21,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 22,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 23,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 24,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 25,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 26,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 27,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 28,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 29,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 30,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 31,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       }
     ]
   },
@@ -167,152 +791,152 @@
       {
         "tanggal": 1,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 2,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 3,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 4,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 5,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 6,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 7,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 8,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 9,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 10,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 11,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 12,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 13,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 14,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 15,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 16,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 17,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 18,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 19,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 20,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 21,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 22,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 23,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 24,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 25,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 26,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 27,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 28,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 29,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 30,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       }
     ]
   },
@@ -323,157 +947,952 @@
       {
         "tanggal": 1,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 2,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 3,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 4,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 5,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 6,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 7,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 8,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 9,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 10,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 11,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 12,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 13,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 14,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 15,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 16,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 17,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 18,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 19,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 20,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 21,
-        "status": "Terbooking",
-        "keterangan": "Terbooking"
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 22,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 23,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 24,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 25,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 26,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 27,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 28,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 29,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 30,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
       },
       {
         "tanggal": 31,
         "status": "Belum ada order",
-        "keterangan": ""
+        "keterangan": "Belum ada order"
+      }
+    ]
+  },
+  {
+    "month": "Agustus",
+    "year": "2026",
+    "dates": [
+      {
+        "tanggal": 1,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 2,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 3,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 4,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 5,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 6,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 7,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 8,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 9,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 10,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 11,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 12,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 13,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 14,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 15,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 16,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 17,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 18,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 19,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 20,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 21,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 22,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 23,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 24,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 25,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 26,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 27,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 28,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 29,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 30,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 31,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      }
+    ]
+  },
+  {
+    "month": "September",
+    "year": "2026",
+    "dates": [
+      {
+        "tanggal": 1,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 2,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 3,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 4,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 5,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 6,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 7,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 8,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 9,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 10,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 11,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 12,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 13,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 14,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 15,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 16,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 17,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 18,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 19,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 20,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 21,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 22,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 23,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 24,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 25,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 26,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 27,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 28,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 29,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 30,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      }
+    ]
+  },
+  {
+    "month": "Oktober",
+    "year": "2026",
+    "dates": [
+      {
+        "tanggal": 1,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 2,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 3,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 4,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 5,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 6,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 7,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 8,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 9,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 10,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 11,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 12,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 13,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 14,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 15,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 16,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 17,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 18,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 19,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 20,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 21,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 22,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 23,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 24,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 25,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 26,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 27,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 28,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 29,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 30,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 31,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      }
+    ]
+  },
+  {
+    "month": "November",
+    "year": "2026",
+    "dates": [
+      {
+        "tanggal": 1,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 2,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 3,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 4,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 5,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 6,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 7,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 8,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 9,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 10,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 11,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 12,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 13,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 14,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 15,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 16,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 17,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 18,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 19,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 20,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 21,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 22,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 23,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 24,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 25,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 26,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 27,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 28,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 29,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 30,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      }
+    ]
+  },
+  {
+    "month": "Desember",
+    "year": "2026",
+    "dates": [
+      {
+        "tanggal": 1,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 2,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 3,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 4,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 5,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 6,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 7,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 8,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 9,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 10,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 11,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 12,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 13,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 14,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 15,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 16,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 17,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 18,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 19,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 20,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 21,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 22,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 23,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 24,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 25,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 26,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 27,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 28,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 29,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 30,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
+      },
+      {
+        "tanggal": 31,
+        "status": "Belum ada order",
+        "keterangan": "Belum ada order"
       }
     ]
   }
