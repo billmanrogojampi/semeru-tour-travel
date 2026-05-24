@@ -9,9 +9,16 @@ export default function ScheduleCard() {
   const [filter, setFilter] = useState('semua');
   const [activeMonth, setActiveMonth] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [updateMessage, setUpdateMessage] = useState('');
+  const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
     fetchJadwal();
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      setIsAdmin(params.get('admin') === 'true');
+    }
   }, []);
 
   const fetchJadwal = async () => {
@@ -74,6 +81,40 @@ export default function ScheduleCard() {
       window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
     }
     setSelectedDate(item);
+  };
+
+  const handleToggleStatus = async (item) => {
+    if (!activeData) return;
+    setIsSaving(true);
+    setUpdateMessage('');
+
+    try {
+      const newStatus = item.status === 'Terbooking' ? 'Belum ada order' : 'Terbooking';
+      const response = await fetch('/api/jadwal', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          month: activeData.month,
+          year: activeData.year,
+          tanggal: item.tanggal,
+          status: newStatus,
+          keterangan: newStatus === 'Terbooking' ? 'Terbooking' : '',
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setUpdateMessage(`Tanggal ${item.tanggal} berhasil diubah menjadi ${newStatus}.`);
+        await fetchJadwal();
+      } else {
+        setUpdateMessage(result.error || 'Gagal mengubah status jadwal.');
+      }
+    } catch (error) {
+      console.error('Error update jadwal:', error);
+      setUpdateMessage('Terjadi kesalahan saat mengubah status jadwal.');
+    } finally {
+      setIsSaving(false);
+      setTimeout(() => setUpdateMessage(''), 3000);
+    }
   };
 
   if (loading) {
@@ -153,6 +194,13 @@ export default function ScheduleCard() {
             <p>{filteredJadwal.length} jadwal tampil</p>
           </div>
 
+          {isAdmin && (
+            <div className={styles.adminNotice}>
+              <p>Mode admin aktif: klik tombol untuk mengubah status jadwal tanpa deploy ulang.</p>
+              {updateMessage && <p className={styles.adminMessage}>{updateMessage}</p>}
+            </div>
+          )}
+
           <div className={styles.scheduleGrid}>
             {filteredJadwal.map((item, index) => (
               <div
@@ -162,9 +210,11 @@ export default function ScheduleCard() {
                     ? styles.cardTersedia
                     : styles.cardTerbooking
                 }`}
-                onClick={() => handleDateClick(item)}
               >
-                <div className={styles.cardContent}>
+                <div
+                  className={styles.cardContent}
+                  onClick={() => !isAdmin && handleDateClick(item)}
+                >
                   <div className={styles.dateText}>Tanggal {item.tanggal}</div>
                   <div
                     className={`${styles.badge} ${
@@ -179,6 +229,15 @@ export default function ScheduleCard() {
                     {item.status}
                   </div>
                 </div>
+                {isAdmin && (
+                  <button
+                    className={styles.adminButton}
+                    onClick={() => handleToggleStatus(item)}
+                    disabled={isSaving}
+                  >
+                    {item.status === 'Terbooking' ? 'Buka kembali' : 'Atur Terbooking'}
+                  </button>
+                )}
               </div>
             ))}
           </div>

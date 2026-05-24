@@ -749,8 +749,8 @@
       },
       {
         "tanggal": 25,
-        "status": "Belum ada order",
-        "keterangan": "Belum ada order"
+        "status": "Terbooking",
+        "keterangan": "Terbooking"
       },
       {
         "tanggal": 26,

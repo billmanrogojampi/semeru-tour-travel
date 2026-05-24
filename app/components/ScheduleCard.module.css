@@ -259,6 +259,43 @@
   font-weight: 700;
 }
 
+.adminNotice {
+  margin-bottom: 20px;
+  padding: 18px 22px;
+  border-radius: 14px;
+  background: rgba(255, 235, 59, 0.12);
+  border: 1px solid rgba(255, 235, 59, 0.25);
+  color: #5a4d00;
+}
+
+.adminMessage {
+  margin: 10px 0 0;
+  color: #3f51b5;
+  font-weight: 600;
+}
+
+.adminButton {
+  margin-top: 14px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.adminButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.25);
+}
+
+.adminButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .emptySelection {
   padding: 28px 24px;
   margin-bottom: 24px;
