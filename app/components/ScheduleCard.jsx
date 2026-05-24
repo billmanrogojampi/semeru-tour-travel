@@ -101,12 +101,23 @@ export default function ScheduleCard() {
           keterangan: newStatus === 'Terbooking' ? 'Terbooking' : '',
         }),
       });
-      const result = await response.json();
-      if (result.success) {
-        setUpdateMessage(`Tanggal ${item.tanggal} berhasil diubah menjadi ${newStatus}.`);
+
+      // Read raw text so we can surface non-JSON errors (stack traces) from the server
+      const text = await response.text();
+      let result = null;
+      try {
+        result = JSON.parse(text);
+      } catch (e) {
+        // not JSON — keep raw text
+      }
+
+      if (response.ok) {
+        setUpdateMessage(result?.message || `Tanggal ${item.tanggal} berhasil diubah menjadi ${newStatus}.`);
         await fetchJadwal();
       } else {
-        setUpdateMessage(result.error || 'Gagal mengubah status jadwal.');
+        const serverMsg = result?.error || text || 'Gagal mengubah status jadwal.';
+        console.error('PUT /api/jadwal failed', response.status, serverMsg);
+        setUpdateMessage(serverMsg);
       }
     } catch (error) {
       console.error('Error update jadwal:', error);
