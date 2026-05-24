@@ -259,6 +259,22 @@
   font-weight: 700;
 }
 
+.emptySelection {
+  padding: 28px 24px;
+  margin-bottom: 24px;
+  text-align: center;
+  border-radius: 18px;
+  background: rgba(102, 126, 234, 0.08);
+  border: 1px solid rgba(102, 126, 234, 0.18);
+  color: #333;
+}
+
+.emptySelection p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+
 .modalOverlay {
   position: fixed;
   inset: 0;

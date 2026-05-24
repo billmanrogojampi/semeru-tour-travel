@@ -35,10 +35,23 @@ export default function KontakPage() {
   const [rating, setRating] = useState(5);
   const [message, setMessage] = useState("");
   const [userTestimonials, setUserTestimonials] = useState([]);
+  const [currentOwnerId, setCurrentOwnerId] = useState("");
+  const [editingId, setEditingId] = useState(null);
+  const [editName, setEditName] = useState("");
+  const [editRating, setEditRating] = useState(5);
+  const [editMessage, setEditMessage] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const ownerKey = "semeruTestimoniOwnerId";
+    let ownerId = window.localStorage.getItem(ownerKey);
+    if (!ownerId) {
+      ownerId = `owner-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+      window.localStorage.setItem(ownerKey, ownerId);
+    }
+    setCurrentOwnerId(ownerId);
+
     const fetchTestimoni = async () => {
       try {
         const response = await fetch("/api/testimoni");
@@ -74,6 +87,11 @@ export default function KontakPage() {
       return;
     }
 
+    if (!currentOwnerId) {
+      setStatusMessage("Menunggu inisialisasi pemilik testimoni. Silakan coba lagi sebentar.");
+      return;
+    }
+
     try {
       const response = await fetch("/api/testimoni", {
         method: "POST",
@@ -84,6 +102,7 @@ export default function KontakPage() {
           name: name.trim(),
           rating: Number(rating),
           message: message.trim(),
+          ownerId: currentOwnerId,
         }),
       });
 
@@ -98,13 +117,73 @@ export default function KontakPage() {
         // Clear status message after 3 seconds
         setTimeout(() => setStatusMessage(""), 3000);
       } else {
-        setStatusMessage("Gagal menyimpan testimoni. Silakan coba lagi.");
+        const errorResult = await response.json().catch(() => null);
+        setStatusMessage(errorResult?.error || "Gagal menyimpan testimoni. Silakan coba lagi.");
       }
     } catch (error) {
       console.error("Error:", error);
       setStatusMessage("Terjadi kesalahan. Silakan coba lagi.");
     }
   };
+
+  const handleStartEdit = (item) => {
+    setEditingId(item.id);
+    setEditName(item.name);
+    setEditRating(item.rating);
+    setEditMessage(item.message);
+    setStatusMessage("");
+  };
+
+  const handleCancelEdit = () => {
+    setEditingId(null);
+    setEditName("");
+    setEditRating(5);
+    setEditMessage("");
+  };
+
+  const handleUpdateSubmit = async (event) => {
+    event.preventDefault();
+    if (!editName.trim() || !editMessage.trim()) {
+      setStatusMessage("Nama dan testimoni tidak boleh kosong saat mengedit.");
+      return;
+    }
+
+    if (!currentOwnerId) {
+      setStatusMessage("Menunggu inisialisasi pemilik testimoni. Silakan coba lagi sebentar.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/testimoni", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: editingId,
+          name: editName.trim(),
+          rating: Number(editRating),
+          message: editMessage.trim(),
+          ownerId: currentOwnerId,
+        }),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        setUserTestimonials((current) => current.map((item) => item.id === result.data.id ? result.data : item));
+        setStatusMessage("Testimoni berhasil diperbarui.");
+        handleCancelEdit();
+        setTimeout(() => setStatusMessage(""), 3000);
+      } else {
+        const errorResult = await response.json().catch(() => null);
+        setStatusMessage(errorResult?.error || "Gagal memperbarui testimoni.");
+      }
+    } catch (error) {
+      console.error("Error update:", error);
+      setStatusMessage("Terjadi kesalahan saat memperbarui testimoni.");
+    }
+  };
+
 
   return (
     <section className="page-content contact-page">
@@ -150,18 +229,56 @@ export default function KontakPage() {
 
         <div className="testimonial-grid">
           <div className="testimonial-list">
-            {testimonials.map((item) => (
-              <article key={item.id} className="testimonial-card">
-                <div className="testimonial-card-header">
-                  <div>
-                    <h3>{item.name}</h3>
-                    <p className="testimonial-date">{item.date}</p>
+            {testimonials.map((item) => {
+              const canEdit = item.ownerId && currentOwnerId && item.ownerId === currentOwnerId;
+              return (
+                <article key={item.id} className="testimonial-card">
+                  <div className="testimonial-card-header">
+                    <div>
+                      <h3>{item.name}</h3>
+                      <p className="testimonial-date">{item.date}</p>
+                    </div>
+                    <div className="testimonial-rating">{getStars(item.rating)}</div>
                   </div>
-                  <div className="testimonial-rating">{getStars(item.rating)}</div>
-                </div>
-                <p>{item.message}</p>
-              </article>
-            ))}
+
+                  {canEdit && editingId === item.id ? (
+                    <form className="testimonial-edit-form" onSubmit={handleUpdateSubmit}>
+                      <label>
+                        Nama
+                        <input type="text" value={editName} onChange={(e) => setEditName(e.target.value)} />
+                      </label>
+                      <label>
+                        Rating
+                        <select value={editRating} onChange={(e) => setEditRating(e.target.value)}>
+                          <option value={5}>5 - Sangat Puas</option>
+                          <option value={4}>4 - Puas</option>
+                          <option value={3}>3 - Cukup</option>
+                          <option value={2}>2 - Kurang</option>
+                          <option value={1}>1 - Tidak Puas</option>
+                        </select>
+                      </label>
+                      <label>
+                        Testimoni
+                        <textarea value={editMessage} onChange={(e) => setEditMessage(e.target.value)} rows={4} />
+                      </label>
+                      <div className="testimonial-edit-actions">
+                        <button type="submit" className="testimonial-submit">Simpan Perubahan</button>
+                        <button type="button" className="testimonial-cancel" onClick={handleCancelEdit}>Batal</button>
+                      </div>
+                    </form>
+                  ) : (
+                    <>
+                      <p>{item.message}</p>
+                      {canEdit && (
+                        <button type="button" className="testimonial-edit-button" onClick={() => handleStartEdit(item)}>
+                          Edit Testimoni
+                        </button>
+                      )}
+                    </>
+                  )}
+                </article>
+              );
+            })}
           </div>
 
           <form className="testimonial-form" onSubmit={handleSubmit}>

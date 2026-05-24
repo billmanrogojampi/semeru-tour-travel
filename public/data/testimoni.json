@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": 1779166039250,
+    "name": "dfdgdg",
+    "rating": 5,
+    "message": "sfss",
+    "date": "19 Mei 2026"
+  },
+  {
+    "id": 1779166068912,
+    "name": "ibud",
+    "rating": 5,
+    "message": "bagus sekali pelayanannya",
+    "date": "19 Mei 2026"
+  },
+  {
+    "id": 1779399475080,
+    "name": "rahmat",
+    "rating": 5,
+    "message": "Saya tidak salah pilih agen, benar benar menyenangkan berlibur bersama semeru",
+    "ownerId": "owner-1779399420474-7qslgx5",
+    "date": "22 Mei 2026"
+  }
+]

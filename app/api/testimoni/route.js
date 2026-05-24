@@ -50,11 +50,13 @@ export async function POST(request) {
 
     const testimonies = readTestimoni();
     
+    const ownerId = body.ownerId?.trim() || `owner-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
     const newTestimoni = {
       id: Date.now(),
       name: body.name.trim(),
       rating: Number(body.rating) || 5,
       message: body.message.trim(),
+      ownerId,
       date: new Date().toLocaleDateString('id-ID', { 
         day: 'numeric', 
         month: 'long', 
@@ -81,3 +83,47 @@ export async function POST(request) {
     return Response.json({ error: error.message }, { status: 500 });
   }
 }
+
+export async function PUT(request) {
+  try {
+    const body = await request.json();
+    if (!body.id || !body.name || !body.message || !body.ownerId) {
+      return Response.json(
+        { error: 'ID, nama, pesan, dan ownerId diperlukan untuk memperbarui testimoni' },
+        { status: 400 }
+      );
+    }
+
+    const testimonies = readTestimoni();
+    const index = testimonies.findIndex((item) => item.id === body.id);
+    if (index === -1) {
+      return Response.json({ error: 'Testimoni tidak ditemukan' }, { status: 404 });
+    }
+
+    if (testimonies[index].ownerId !== body.ownerId) {
+      return Response.json({ error: 'Anda tidak diizinkan mengedit testimoni ini' }, { status: 403 });
+    }
+
+    testimonies[index] = {
+      ...testimonies[index],
+      name: body.name.trim(),
+      rating: Number(body.rating) || testimonies[index].rating || 5,
+      message: body.message.trim(),
+      date: new Date().toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      }),
+    };
+
+    if (writeTestimoni(testimonies)) {
+      return Response.json({ success: true, data: testimonies[index] });
+    }
+
+    return Response.json({ error: 'Gagal memperbarui testimoni' }, { status: 500 });
+  } catch (error) {
+    console.error('Error PUT testimoni:', error);
+    return Response.json({ error: error.message }, { status: 500 });
+  }
+}
+

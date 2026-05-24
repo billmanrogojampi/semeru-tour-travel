@@ -7,7 +7,7 @@ export default function ScheduleCard() {
   const [jadwal, setJadwal] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('semua');
-  const [activeMonth, setActiveMonth] = useState(0);
+  const [activeMonth, setActiveMonth] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
@@ -28,15 +28,53 @@ export default function ScheduleCard() {
     }
   };
 
-  const activeData = jadwal[activeMonth] || { month: '', year: '', dates: [] };
-  const filteredJadwal = activeData.dates.filter(item => {
-    if (filter === 'tersedia') return item.status === 'Belum ada order';
-    if (filter === 'terbooking') return item.status === 'Terbooking';
-    return true;
+  const monthNames = [
+    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+  ];
+
+  const pageYear = jadwal[0]?.year || new Date().getFullYear().toString();
+  const monthTabs = monthNames.map(monthName => {
+    const found = jadwal.find(item => {
+      return (
+        item.month &&
+        String(item.month).trim().toLowerCase() === String(monthName).toLowerCase()
+      );
+    });
+
+    return {
+      month: monthName,
+      year: found?.year || pageYear,
+      dates: found?.dates || []
+    };
   });
 
-  const statsTersedia = activeData.dates.filter(item => item.status === 'Belum ada order').length;
-  const statsTerbooking = activeData.dates.filter(item => item.status === 'Terbooking').length;
+  const activeData = activeMonth !== null ? monthTabs[activeMonth] : null;
+  const filteredJadwal = activeData
+    ? activeData.dates.filter(item => {
+        if (filter === 'tersedia') return item.status === 'Belum ada order';
+        if (filter === 'terbooking') return item.status === 'Terbooking';
+        return true;
+      })
+    : [];
+
+  const statsTersedia = activeData
+    ? activeData.dates.filter(item => item.status === 'Belum ada order').length
+    : 0;
+  const statsTerbooking = activeData
+    ? activeData.dates.filter(item => item.status === 'Terbooking').length
+    : 0;
+
+  const waNumber = '6281336811455';
+  const handleDateClick = (item) => {
+    const monthStr = activeData ? `${activeData.month} ${activeData.year}` : '';
+    const text = `Halo, saya ingin informasi untuk tanggal ${item.tanggal} ${monthStr}.`;
+    // buka chat WhatsApp di tab baru
+    if (typeof window !== 'undefined') {
+      window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
+    }
+    setSelectedDate(item);
+  };
 
   if (loading) {
     return (
@@ -54,26 +92,15 @@ export default function ScheduleCard() {
         <p className={styles.subtitle}>Cek ketersediaan tanggal perjalanan Anda</p>
       </div>
 
-      {/* Stats Cards */}
-      <div className={styles.statsGrid}>
-        <div className={styles.statCard + ' ' + styles.tersedia}>
-          <div className={styles.statNumber}>{statsTersedia}</div>
-          <div className={styles.statLabel}>Tanggal Tersedia</div>
-        </div>
-        <div className={styles.statCard + ' ' + styles.terbooking}>
-          <div className={styles.statNumber}>{statsTerbooking}</div>
-          <div className={styles.statLabel}>Tanggal Terbooking</div>
-        </div>
-      </div>
-
       <div className={styles.monthTabs}>
-        {jadwal.map((monthData, index) => (
+        {monthTabs.map((monthData, index) => (
           <button
             key={monthData.month + index}
             className={`${styles.monthTab} ${index === activeMonth ? styles.activeMonthTab : ''}`}
             onClick={() => {
               setActiveMonth(index);
               setFilter('semua');
+              setSelectedDate(null);
             }}
           >
             {monthData.month} {monthData.year}
@@ -81,61 +108,82 @@ export default function ScheduleCard() {
         ))}
       </div>
 
-      <div className={styles.filterButtons}>
-        <button
-          className={`${styles.filterBtn} ${filter === 'semua' ? styles.active : ''}`}
-          onClick={() => setFilter('semua')}
-        >
-          Semua ({activeData.dates.length})
-        </button>
-        <button
-          className={`${styles.filterBtn} ${filter === 'tersedia' ? styles.active : ''}`}
-          onClick={() => setFilter('tersedia')}
-        >
-          Tersedia ({statsTersedia})
-        </button>
-        <button
-          className={`${styles.filterBtn} ${filter === 'terbooking' ? styles.active : ''}`}
-          onClick={() => setFilter('terbooking')}
-        >
-          Terbooking ({statsTerbooking})
-        </button>
-      </div>
+      {!activeData && (
+        <div className={styles.emptySelection}>
+          <p>Pilih salah satu bulan di atas untuk melihat tanggal keberangkatan dan status order.</p>
+        </div>
+      )}
 
-      <div className={styles.monthHeader}>
-        <h3>{activeData.month} {activeData.year}</h3>
-        <p>{filteredJadwal.length} jadwal tampil</p>
-      </div>
-
-      <div className={styles.scheduleGrid}>
-        {filteredJadwal.map((item, index) => (
-          <div
-            key={index}
-            className={`${styles.scheduleCard} ${
-              item.status === 'Belum ada order'
-                ? styles.cardTersedia
-                : styles.cardTerbooking
-            }`}
-            onClick={() => setSelectedDate(item)}
-          >
-            <div className={styles.cardContent}>
-              <div className={styles.dateText}>Tanggal {item.tanggal}</div>
-              <div
-                className={`${styles.badge} ${
-                  item.status === 'Belum ada order'
-                    ? styles.badgeTersedia
-                    : styles.badgeTerbooking
-                }`}
-              >
-                <span className={styles.statusIcon}>
-                  {item.status === 'Belum ada order' ? '✓' : '✗'}
-                </span>
-                {item.status}
-              </div>
+      {activeData && (
+        <>
+          <div className={styles.statsGrid}>
+            <div className={styles.statCard + ' ' + styles.tersedia}>
+              <div className={styles.statNumber}>{statsTersedia}</div>
+              <div className={styles.statLabel}>Tanggal Tersedia</div>
+            </div>
+            <div className={styles.statCard + ' ' + styles.terbooking}>
+              <div className={styles.statNumber}>{statsTerbooking}</div>
+              <div className={styles.statLabel}>Tanggal Terbooking</div>
             </div>
           </div>
-        ))}
-      </div>
+
+          <div className={styles.filterButtons}>
+            <button
+              className={`${styles.filterBtn} ${filter === 'semua' ? styles.active : ''}`}
+              onClick={() => setFilter('semua')}
+            >
+              Semua ({activeData.dates.length})
+            </button>
+            <button
+              className={`${styles.filterBtn} ${filter === 'tersedia' ? styles.active : ''}`}
+              onClick={() => setFilter('tersedia')}
+            >
+              Tersedia ({statsTersedia})
+            </button>
+            <button
+              className={`${styles.filterBtn} ${filter === 'terbooking' ? styles.active : ''}`}
+              onClick={() => setFilter('terbooking')}
+            >
+              Terbooking ({statsTerbooking})
+            </button>
+          </div>
+
+          <div className={styles.monthHeader}>
+            <h3>{activeData.month} {activeData.year}</h3>
+            <p>{filteredJadwal.length} jadwal tampil</p>
+          </div>
+
+          <div className={styles.scheduleGrid}>
+            {filteredJadwal.map((item, index) => (
+              <div
+                key={index}
+                className={`${styles.scheduleCard} ${
+                  item.status === 'Belum ada order'
+                    ? styles.cardTersedia
+                    : styles.cardTerbooking
+                }`}
+                onClick={() => handleDateClick(item)}
+              >
+                <div className={styles.cardContent}>
+                  <div className={styles.dateText}>Tanggal {item.tanggal}</div>
+                  <div
+                    className={`${styles.badge} ${
+                      item.status === 'Belum ada order'
+                        ? styles.badgeTersedia
+                        : styles.badgeTerbooking
+                    }`}
+                  >
+                    <span className={styles.statusIcon}>
+                      {item.status === 'Belum ada order' ? '✓' : '✗'}
+                    </span>
+                    {item.status}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
 
       {selectedDate && (
         <div className={styles.modalOverlay} onClick={() => setSelectedDate(null)}>
