@@ -1,35 +1,14 @@
-import fs from 'fs';
-import path from 'path';
+import db from '../../../lib/testimoniDb';
 
-const filePath = path.join(process.cwd(), 'public', 'data', 'testimoni.json');
+export const runtime = 'nodejs';
 
-function readTestimoni() {
-  try {
-    if (!fs.existsSync(filePath)) {
-      fs.writeFileSync(filePath, '[]', 'utf-8');
-      return [];
-    }
-    const content = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(content);
-  } catch (error) {
-    console.error('Error membaca testimoni:', error);
-    return [];
-  }
-}
-
-function writeTestimoni(data) {
-  try {
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
-    return true;
-  } catch (error) {
-    console.error('Error menulis testimoni:', error);
-    return false;
-  }
+function parseId(id) {
+  return typeof id === 'number' ? id : Number(id);
 }
 
 export async function GET() {
   try {
-    const testimonies = readTestimoni();
+    const testimonies = db.prepare('SELECT * FROM testimoni ORDER BY id DESC').all();
     return Response.json({ success: true, data: testimonies });
   } catch (error) {
     console.error('Error GET testimoni:', error);
@@ -40,7 +19,7 @@ export async function GET() {
 export async function POST(request) {
   try {
     const body = await request.json();
-    
+
     if (!body.name || !body.message) {
       return Response.json(
         { error: 'Nama dan testimoni harus diisi' },
@@ -48,36 +27,26 @@ export async function POST(request) {
       );
     }
 
-    const testimonies = readTestimoni();
-    
     const ownerId = body.ownerId?.trim() || `owner-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
-    const newTestimoni = {
-      id: Date.now(),
-      name: body.name.trim(),
-      rating: Number(body.rating) || 5,
-      message: body.message.trim(),
-      ownerId,
-      date: new Date().toLocaleDateString('id-ID', { 
-        day: 'numeric', 
-        month: 'long', 
-        year: 'numeric' 
-      }),
-    };
+    const date = new Date().toLocaleDateString('id-ID', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
 
-    testimonies.push(newTestimoni);
-    
-    if (writeTestimoni(testimonies)) {
-      return Response.json({ 
-        success: true, 
-        data: newTestimoni,
-        message: 'Testimoni berhasil disimpan'
-      });
-    } else {
-      return Response.json(
-        { error: 'Gagal menyimpan testimoni' },
-        { status: 500 }
-      );
-    }
+    const insert = db.prepare(
+      'INSERT INTO testimoni (name, rating, message, ownerId, date) VALUES (?, ?, ?, ?, ?)'
+    );
+    const result = insert.run(
+      body.name.trim(),
+      Number(body.rating) || 5,
+      body.message.trim(),
+      ownerId,
+      date
+    );
+
+    const saved = db.prepare('SELECT * FROM testimoni WHERE id = ?').get(result.lastInsertRowid);
+    return Response.json({ success: true, data: saved, message: 'Testimoni berhasil disimpan' });
   } catch (error) {
     console.error('Error POST testimoni:', error);
     return Response.json({ error: error.message }, { status: 500 });
@@ -87,41 +56,36 @@ export async function POST(request) {
 export async function PUT(request) {
   try {
     const body = await request.json();
-    if (!body.id || !body.name || !body.message || !body.ownerId) {
+    const id = parseId(body.id);
+
+    if (!id || !body.name || !body.message || !body.ownerId) {
       return Response.json(
         { error: 'ID, nama, pesan, dan ownerId diperlukan untuk memperbarui testimoni' },
         { status: 400 }
       );
     }
 
-    const testimonies = readTestimoni();
-    const itemId = Number(body.id);
-    const index = testimonies.findIndex((item) => item.id === itemId);
-    if (index === -1) {
+    const existing = db.prepare('SELECT * FROM testimoni WHERE id = ?').get(id);
+    if (!existing) {
       return Response.json({ error: 'Testimoni tidak ditemukan' }, { status: 404 });
     }
 
-    if (testimonies[index].ownerId !== body.ownerId) {
+    if (existing.ownerId !== body.ownerId) {
       return Response.json({ error: 'Anda tidak diizinkan mengedit testimoni ini' }, { status: 403 });
     }
 
-    testimonies[index] = {
-      ...testimonies[index],
-      name: body.name.trim(),
-      rating: Number(body.rating) || testimonies[index].rating || 5,
-      message: body.message.trim(),
-      date: new Date().toLocaleDateString('id-ID', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      }),
-    };
+    const date = new Date().toLocaleDateString('id-ID', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
 
-    if (writeTestimoni(testimonies)) {
-      return Response.json({ success: true, data: testimonies[index] });
-    }
+    db.prepare(
+      'UPDATE testimoni SET name = ?, rating = ?, message = ?, date = ? WHERE id = ?'
+    ).run(body.name.trim(), Number(body.rating) || existing.rating || 5, body.message.trim(), date, id);
 
-    return Response.json({ error: 'Gagal memperbarui testimoni' }, { status: 500 });
+    const saved = db.prepare('SELECT * FROM testimoni WHERE id = ?').get(id);
+    return Response.json({ success: true, data: saved });
   } catch (error) {
     console.error('Error PUT testimoni:', error);
     return Response.json({ error: error.message }, { status: 500 });
@@ -131,27 +95,23 @@ export async function PUT(request) {
 export async function DELETE(request) {
   try {
     const body = await request.json();
-    if (!body.id || !body.ownerId) {
+    const id = parseId(body.id);
+
+    if (!id || !body.ownerId) {
       return Response.json({ error: 'ID dan ownerId diperlukan untuk menghapus testimoni' }, { status: 400 });
     }
 
-    const testimonies = readTestimoni();
-    const itemId = Number(body.id);
-    const index = testimonies.findIndex((item) => item.id === itemId);
-    if (index === -1) {
+    const existing = db.prepare('SELECT * FROM testimoni WHERE id = ?').get(id);
+    if (!existing) {
       return Response.json({ error: 'Testimoni tidak ditemukan' }, { status: 404 });
     }
 
-    if (testimonies[index].ownerId !== body.ownerId) {
+    if (existing.ownerId !== body.ownerId) {
       return Response.json({ error: 'Anda tidak diizinkan menghapus testimoni ini' }, { status: 403 });
     }
 
-    testimonies.splice(index, 1);
-    if (writeTestimoni(testimonies)) {
-      return Response.json({ success: true, data: { id: body.id } });
-    }
-
-    return Response.json({ error: 'Gagal menghapus testimoni' }, { status: 500 });
+    db.prepare('DELETE FROM testimoni WHERE id = ?').run(id);
+    return Response.json({ success: true, data: { id } });
   } catch (error) {
     console.error('Error DELETE testimoni:', error);
     return Response.json({ error: error.message }, { status: 500 });
