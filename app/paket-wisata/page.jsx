@@ -77,11 +77,21 @@ export default function PaketWisataPage() {
   const [error, setError] = useState('');
 
   useEffect(() => {
+    async function tryFetchExcel(paths) {
+      for (const path of paths) {
+        const response = await fetch(path);
+        if (response.ok) {
+          return response;
+        }
+      }
+      return null;
+    }
+
     async function loadPackages() {
       try {
-        const response = await fetch('/data/paket.xlsx');
-        if (!response.ok) {
-          throw new Error(`Gagal memuat paket.xlsx: ${response.status}`);
+        const response = await tryFetchExcel(['/data/paket.xlsx', '/paket.xlsx']);
+        if (!response) {
+          throw new Error('Gagal memuat paket.xlsx. Pastikan file berada di public/data/paket.xlsx atau public/paket.xlsx.');
         }
 
         const buffer = await response.arrayBuffer();
